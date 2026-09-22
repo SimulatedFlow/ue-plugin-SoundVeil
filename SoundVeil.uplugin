@@ -1,0 +1,27 @@
+{
+	"FileVersion": 3,
+	"Version": 3,
+	"VersionName": "1.0.2",
+	"EngineVersion": "5.8.0",
+	"FriendlyName": "SoundVeil - Audio Occlusion On A Budget",
+	"Description": "Sound behind walls, done properly. One service decides for every playing source how much geometry is in the way, under a hard cap on traces per frame that every source shares - sixty ambient loops on a floor no longer mean sixty traces every frame. Occlusion is measured with several taps across a small pattern instead of one yes/no ray, so a half open door reads as a half open door and not as a wall. Each source smooths its own value over attack and release, so somebody walking through the line of sight does not click. The result drives two things your audio chain already understands - a volume multiplier and a low pass frequency - both through curves in a profile, so concrete and a curtain can damp differently without touching code. An on-screen counter box drawn on Canvas shows traces against budget, the longest a source has waited, and the occlusion, volume and cut-off of the loudest sources. SoundVeil replaces neither your spatializer nor your audio engine and computes no reverb paths. It runs happily next to PulseScore - the two touch different things: PulseScore mixes the stems of one piece of music, SoundVeil damps individual sources in the room.",
+	"Category": "Audio",
+	"CreatedBy": "Silvan Teufel",
+	"CreatedByURL": "https://silvan.teufel-engineering.com",
+	"DocsURL": "https://wiki.teufel-engineering.com/en/SoundVeil/documentation",
+	"SupportURL": "mailto:teufelsilvan@gmail.com",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "SoundVeil",
+			"Type": "Runtime",
+			"LoadingPhase": "PreDefault",
+			"PlatformAllowList": [
+				"Win64"
+			]
+		}
+	]
+}
